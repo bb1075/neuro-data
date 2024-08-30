@@ -163,7 +163,7 @@ with requests.sessions.Session() as connect:
         queryexp = experimentmove(xnatID,expID,project,destproject,changeprimary=True,label=None)
 #        queryexp = experimentmove(xnatID,xnatLABEL,expID,project,destproject,changeprimary=True,label=None)
         print(queryexp)
-# not needed - pulls all the studies in a project
+# not needed - pulls all the studies in a project - this really only creates the subject
 #    for exp in expID:
         r = connect.put(f"{xnaturl}{queryexp}")
         if r.status_code == 200:
